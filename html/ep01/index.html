@@ -1,32 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <title>zhiwar - zhiyar</title>
+
+    <style>
+      body[data-mode="dark"] {
+        background-color: rgb(23, 23, 23);
+        color: white;
+      }
+      
+      .text-primary {
+        color: blueviolet;
+      }
+
+      .text-lg {
+        font-size: 24px;
+      }
+
+      .first-p {
+        margin: 0;
+        font-size: 18px;
+        color: brown;
+        background-color: beige;
+      }
+
+      #lorem-paragraph {
+        color: blue;
+      }
+
+      p {
+        font-size: 12px;
+      }
+      body > h2:nth-child(1) {
+        /*  */
+      }
+
+      body > div:nth-child(9) > b {
+        background-color: cadetblue;
+      }
+    </style>
   </head>
-  <body>
+  <body data-is-debug="true" data-is-dev="true" data-mode="light">  
     <!-- heading -->
     <h1>متن تستی</h1>
-    <div style="display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;">متن تستی</div>
+    <div
+      class="text-primary"
+      style="
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+        width: 100px;
+      "
+    >
+      متن تستی
+    </div>
     <h2>متن تستی</h2>
     <h3>متن تستی</h3>
     <h4>متن تستی</h4>
     <h5>متن تستی</h5>
     <!-- <h6>متن تستی</h6> -->
-
+    <!-- 12.0.1
+    7.4.3 -->
+    <!-- conflict - marge -->
     <!-- paragraph -->
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id vel pariatur
-      dignissimos perferendis sunt autem odit asperiores! Autem, suscipit totam
-      eligendi maxime quia voluptatum architecto rerum assumenda facere porro.
-      Nulla.
+    <first-p>
+     hello my name is zakarya
+    </first-p>
+
+    <p class="text-primary first-p" id="lorem-paragraph" title="zhiyar" dir="ltr" translate="yes">
+      hello my name is zakarya
     </p>
 
     <!-- division -->
@@ -34,19 +82,19 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quod,
       magnam quam praesentium itaque dolorum quis? Voluptatum minus rem, omnis
       <!-- bold -->
-      <b>zakarya</b>
+      <b class="text-lg">zakarya</b>
       laborum quibusdam sapiente dolore quisquam quos natus ratione nemo
       voluptate.
     </div>
 
-    <main></main>
+    <main data-name="zhiwar" data-age="18" data-asdjhflkasdjhflkajsd=""></main>
+
     <section></section>
     <nav></nav>
     <article></article>
     <aside></aside>
     <footer></footer>
     <header></header>
-
 
     <script>
       console.log("hello");
