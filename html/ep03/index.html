@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form {
+        border: 1px double lightblue;
+        padding: 12px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- no validate -->
+    <div class="form-container">
+      <form id="form">
+        <label for="f-name" style="background-color: red">
+          <span>نام:</span>
+          <input
+            type="text"
+            id="f-name"
+            name="firstname"
+            minlength="2"
+            required
+          />
+        </label>
+
+        <label for="l-name">
+          <span>نام خانوادگی:</span>
+          <input type="text" id="l-name" name="lastname" />
+        </label>
+
+        <label for="age">
+          <span>سن :</span>
+          <input type="number" id="age" name="age" min="18" required />
+        </label>
+
+        <div>
+          <span>جنسیت :</span>
+          <label for="men">
+            <span>مرد</span>
+            <input type="radio" id="men" name="gender" value="men" />
+          </label>
+          <label for="women">
+            <span>زن</span>
+            <input type="radio" id="women" name="gender" value="women" />
+          </label>
+        </div>
+
+        <div>
+          <span>ماشین های شما:</span>
+
+          <label>
+            fiat
+            <input type="checkbox" name="car" id="fiat" value="fiat" />
+          </label>
+
+          <label>
+            BMW
+            <input type="checkbox" name="car" id="bmw" value="BMW" />
+          </label>
+
+          <label>
+            McLaren
+            <input type="checkbox" name="car" id="mclaren" value="McLaren" />
+          </label>
+        </div>
+
+        <div>
+          جنسیت:
+          <select name="gender2" id="gender2">
+            <option value="men">مرد</option>
+            <option value="women">زن</option>
+          </select>
+        </div>
+
+        <textarea id="desc" name="desc">سلام این توضیحات تستی است.</textarea>
+
+        <label for="rember_me">
+          <span> منو به خاطر بسپار </span>
+          <input type="checkbox" id="rember_me" name="rember_me" />
+        </label>
+
+        <!-- <input type="search" name="search_value">  -->
+
+        <!-- <input type="submit" value="ثبت"> -->
+        <button type="submit" id="submit_btn">ثبت</button>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    const form = document.querySelector("#form");
+
+    form.addEventListener("submit", (event) => {
+      // console.log(event);
+      event.preventDefault();
+      const formData = {};
+      formData.firstname = document.querySelector("#f-name").value;
+      formData.lastname = document.querySelector("#l-name").value;
+
+      console.log(formData);
+    });
+
+    const x = 3;
+    if (x === 1 || x === 2 || x === 3) {
+      console.log("object");
+    }
+  </script>
+</html>
