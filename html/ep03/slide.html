@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        *{
-            box-sizing: border-box;
-            margin: 0px;
-            padding: 0px;
-        }
-.All{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 300px;
-   gap: 4px; 
-    overflow-x:auto;
-    
-}
-.slide{
-     width: 180px;
-    height: 180px;
-    border-radius: 2px;
-    flex-wrap: nowrap;
-    flex-grow: 2px;
-    flex-shrink: 0;
-    overflow: hidden;
-    transition: transform .4s ease;
-}
-.slide img {
-object-fit: cover;
-    transition: transform .9s ease;
-
-}
-.slide:hover{
-    transform: scale(1.3);
-}
+      * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+      }
+      .All {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: 300px 0;
+        gap: 4px;
+        /* overflow-x: auto; */
+      }
+      .slide {
+        width: 180px;
+        height: 180px;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+      .slide img {
+        object-fit: cover;
+      }
+      .slide:hover {
+        flex-grow: 2;
+        flex-shrink: 0;
+        /* transform: scale(1.3); */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="All">
-    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QGKIRzz2o7lYiGdsrEcScvkCC0yJwktlCw&s" alt=""></div>
-    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx12sVrq2NHokVCCzy3OSKnnPIyW-wky5UfQ&s" alt=""></div>
-    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyJnyBfNg5Dpcqx3ibbK0TXk7OU2UwqIajFQ&s" alt=""></div>
-    <div class="slide"><img src="https://www.chetor.com/wp-content/uploads/2018/09/136203.jpg" alt=""></div>
-    <div class="slide"><img src="https://www.eligasht.com/Blog/wp-content/uploads/2018/06/Austria.jpg" alt=""></div>
-</div>
-</body>
+      <div class="slide">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QGKIRzz2o7lYiGdsrEcScvkCC0yJwktlCw&s"
+          alt=""
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx12sVrq2NHokVCCzy3OSKnnPIyW-wky5UfQ&s"
+          alt=""
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyJnyBfNg5Dpcqx3ibbK0TXk7OU2UwqIajFQ&s"
+          alt=""
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.chetor.com/wp-content/uploads/2018/09/136203.jpg"
+          alt=""
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.eligasht.com/Blog/wp-content/uploads/2018/06/Austria.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
 </html>
