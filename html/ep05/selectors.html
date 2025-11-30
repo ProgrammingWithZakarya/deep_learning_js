@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors</title>
+  </head>
+
+  <style>
+    h2#title.title, .featured + div#after-featured.product{
+     background-color: rgba(255, 0, 0, 0.185);
+    }
+      
+    h2 {
+      font-size: 32px;
+    }
+
+    .product {
+      border: 1px solid gray;
+      margin: 2px;
+    }
+
+    .featured + .product  {
+      background-color: rebeccapurple !important;
+      color: white !important;
+    }
+
+    h2#title.title {
+      font-size: 24px;
+    }
+
+    /* 0,0,1 */
+    /* id,class,tag-psaudoClasses */
+  </style>
+  <body>
+    <div class="products">
+      <h2 id="title" class="title">Product List</h2>
+
+      <div class="product">
+        <h3 class="name">Samsung Galaxy S23</h3>
+        <span class="price" data-currency="usd">$899</span>
+      </div>
+
+      <div class="product featured">
+        <h3 class="name">iPhone 14</h3>
+        <span class="price" data-currency="usd">$999</span>
+      </div>
+
+      <div class="product" id="after-featured">
+        <h3 class="name">Xiaomi 13</h3>
+        <span class="price" data-currency="eur">€799</span>
+      </div>
+
+      <div class="product">
+        <h3 class="name">Xiaomi 13</h3>
+        <span class="price" data-currency="eur">€799</span>
+      </div>
+    </div>
+
+    <h2>Zhiwar</h2>
+  </body>
+</html>

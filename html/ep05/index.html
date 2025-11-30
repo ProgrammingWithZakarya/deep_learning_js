@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box sizing and shadows</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        margin: 20px;
+        border: 2px solid black;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: 5px 5px 5px 10px red inset;
+      }
+
+      .box-1 {
+        color: rgba(0, 0, 0, 0.687);
+        box-sizing: border-box;
+        text-shadow: 1px 1px 2px red , -1px -1px 2px blue;
+      }
+
+      .box-2 {
+        box-sizing: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box-1">box 1</div>
+
+    <div class="box box-2">box 2</div>
+  </body>
+</html>
