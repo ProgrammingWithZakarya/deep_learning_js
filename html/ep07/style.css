@@ -1,0 +1,145 @@
+:root {
+    --header-height : 48px;
+    --footer-height : 4rem;
+}
+
+@keyframes change-color-animate {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+@keyframes change-scale-animate {
+       0% {
+        transform: scaleX(1.5);
+    }
+
+    50% {
+        transform: scaleY(1.5);
+    }
+
+    100% {
+        transform: scaleX(1.5);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+}
+
+header.header {
+    height: 48px;
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+.content-container {
+    width: 100%;
+    /* height: calc(100% - var(--header-height) - var(--footer-height)); */
+    height: 300vh;
+    background-color: cadetblue;
+    display: flex;
+    align-items: stretch;
+}
+
+.content-container > aside {
+    min-width: 280px;
+    flex-grow: 0;
+    background-color: darkgoldenrod;
+    padding: 24px;
+}
+
+.content-container > main {
+    background-color: darkgrey;
+    flex-grow: 1;
+    padding: 16px;
+    position: relative;
+}
+
+footer {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-down {
+    position: fixed;
+    z-index: 5;
+    bottom: 24px;
+    left: 24px;
+}
+
+.modal {
+    width: 560px ;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0 10px 10px black;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.modal .modal-title {
+    padding: 8px;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+}
+
+.modal .modal-body {
+    padding: 4px;
+    margin-top: 8px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 12px;
+}
+
+.animate-btn {
+    border: 0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation-name: change-color-animate, change-scale-animate ;
+    animation-timing-function: ease, cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 5s, 2s;
+    animation-delay: 2s, 0;
+    animation-iteration-count: infinite, infinite;
+    animation-fill-mode: both, both;
+    /* animation-play-state: running; */
+    animation-direction: alternate-reverse, alternate-reverse;
+}
+
+.animate-btn:hover {
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.254);
+}
+
+.animate-btn:active {
+    transform: scale(0.96);
+    background-color: darkorchid;
+    color: white;
+}
