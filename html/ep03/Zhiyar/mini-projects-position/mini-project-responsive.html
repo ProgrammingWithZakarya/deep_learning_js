@@ -96,6 +96,7 @@
         padding: 8px 9px;
         transition: all 0.6s ease;
         color: rgba(241, 159, 159, 0.862);
+        width: fit-content;
       }
       .btn:hover {
         background-color: rgba(241, 159, 159, 0.862);
@@ -130,13 +131,40 @@
         nav {
           display: none;
         }
-        .menu{
+        .menu {
           display: flex;
         }
+      }
+
+      .humberger_menu--content {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        padding: 32px;
+        z-index: 10;
+
+        transform: scale(0);
+        transition-property: width , height, transform;
+        transition-delay: 0.1s, 0.1s, 0s;
+        transition-timing-function: ease-out, ease-out, ease-out;
+        transition-duration: 0.5s, 0.5s, 0.5s;
+
+        top: -70%;
+        right: -70%;
+      }
+
+      body:has(#humberger_menu:checked) .humberger_menu--content {
+        transform: scale(1);
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
       }
     </style>
   </head>
   <body>
+    <input type="checkbox" id="humberger_menu" style="display: none" />
     <header>
       <div class="nav">
         <div class="logo"><a href="#">LOGO</a></div>
@@ -166,12 +194,36 @@
           <input type="text" placeholder="Search..." />
           <button class="btn">Search</button>
         </div>
-        <div class="menu">
+        <label for="humberger_menu" class="menu">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </label>
       </div>
     </header>
+
+    <div class="humberger_menu--content flex">
+      <label for="humberger_menu" class="close-btn btn">X</label>
+
+      <nav>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li class="dropdown">
+            <a href="#">Link3</a>
+            <ul class="drop">
+              <li><a href="#">zhiyar1</a></li>
+              <li><a href="#">zhiyar2</a></li>
+              <li><a href="#">zhiyar3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Link4</a></li>
+          <li><a href="#">Link5</a></li>
+          <li><a href="#">Link6</a></li>
+          <li><a href="#">Link7</a></li>
+          <li><a href="#">Link8</a></li>
+        </ul>
+      </nav>
+    </div>
   </body>
 </html>
