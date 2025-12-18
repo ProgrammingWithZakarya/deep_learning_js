@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Animation</title>
+
+    <style>
+      :root {
+        --bg-color: #13213a;
+        --moon: #cd9f93;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--bg-color);
+      }
+
+      .moon {
+        width: 200px;
+        aspect-ratio: 1/1;
+        background-color: var(--bg-color);
+        border-radius: calc(infinity * 1px);
+
+        animation: moon-animate 2s linear 0s infinite alternate-reverse both;
+      }
+
+      @keyframes moon-animate {
+        0% {
+          box-shadow: -10px 10px 0 0 var(--moon);
+        }
+
+        50% {
+          box-shadow: 0 0 15px 2px var(--moon);
+        }
+
+        100% {
+          box-shadow: 10px -10px 0 0 var(--moon);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="moon"></div>
+  </body>
+</html>

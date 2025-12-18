@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform box practice</title>
+
+    <style>
+      /* psudow element */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .box {
+        width: 50px;
+        aspect-ratio: 1/1;
+        background-color: green;
+        position: relative;
+        animation-name: transform-box;
+        animation-timing-function: linear;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+      }
+
+      /* ::after, ::before */
+
+      .box::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background-image: linear-gradient(to right, green, transparent);
+        /* width, right and left by animate */
+        animation: shadow-animate 4s linear 0s infinite normal;
+        z-index: -1;
+      }
+
+      .box::before {
+        content: 'hi';
+        display: inline;
+      }
+
+      @keyframes transform-box {
+        0% {
+          transform: translateX(-200%);
+        }
+
+        100% {
+          transform: translateX(200%);
+        }
+      }
+
+      @keyframes shadow-animate {
+        0% {
+          width: 100%;
+        }
+
+        25% {
+          width: 200%;
+        }
+
+        50% {
+          width: 100%;
+          /* background-image: linear-gradient(to right, transparent, green); */
+          transform: scaleX(1);
+        }
+
+        51% {
+          transform: scaleX(-1) translateX(100%);
+        }
+
+        75% {
+          width: 200%;
+        }
+
+
+        99.9% {
+          transform: scaleX(-1) translateX(0%);
+        }
+        100% {
+          width: 100%;
+          /* background-image: linear-gradient(to right, green, transparent); */
+          transform: skewX(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <!-- before -->
+      <!-- after -->
+    </div>
+  </body>
+</html>
