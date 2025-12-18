@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        display: flex;
+        padding: 10px 13px;
+        background-color: rgba(172, 252, 225, 0.499);
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav {
+        display: flex;
+        gap: 30px;
+      }
+      .nav nav ul {
+        display: flex;
+        gap: 25px;
+        list-style-type: none;
+        text-align: center;
+      }
+      .nav .logo a {
+        color: rgb(1, 128, 255);
+        font-size: 35px;
+        text-decoration: none;
+        transition: all 0.4s ease;
+      }
+      .nav .logo a:hover {
+        color: blueviolet;
+      }
+      .nav > nav > ul > li > ul {
+        display: none;
+      }
+      .nav > nav > ul > li {
+        position: relative;
+      }
+      .nav nav ul a {
+        color: rgba(77, 77, 77, 0.516);
+        transition: all 0.6s ease;
+        font-size: 18px;
+        text-decoration: none;
+        position: relative;
+      }
+      .nav nav ul a::after {
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 2px;
+        z-index: 5;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(77, 0, 192, 0.895);
+        transition: all 1s ease;
+      }
+      .nav nav ul a:hover::after {
+        width: 100%;
+      }
+      .nav nav ul a:hover {
+        color: rgb(200, 88, 2);
+      }
+      nav > nav > ul > li:hover > ul {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 100;
+        height: fit-content;
+        width: fit-content;
+        background-color: blueviolet;
+        box-shadow: 0 10px 12px 5px red;
+      }
+      .search {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .search input {
+        border: 1px solid lightblue;
+        border-radius: 4px;
+        padding: 8px 9px;
+        background-color: rgba(189, 238, 255, 0.73);
+        outline: none;
+        transition: all 0.5s ease;
+      }
+      .btn {
+        border: 1px solid;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 8px 9px;
+        transition: all 0.6s ease;
+        color: rgba(241, 159, 159, 0.862);
+      }
+      .btn:hover {
+        background-color: rgba(241, 159, 159, 0.862);
+        color: rgba(57, 57, 57, 0.467);
+      }
+      .drop {
+        background-color: rgba(221, 209, 232, 0.64);
+        border-radius: 8px;
+        position: absolute;
+      }
+
+      .dropdown:hover .drop {
+        display: block;
+      }
+      .menu {
+        margin: 10px;
+        width: 30px;
+        height: 22px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .menu span {
+        height: 4px;
+        background-color: rgb(1, 128, 255);
+        border-radius: 2px;
+      }
+      .left {
+        display: flex;
+      }
+      @media (max-width: 960px) {
+        nav {
+          display: none;
+        }
+        .menu{
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo"><a href="#">LOGO</a></div>
+        <title>Document</title>
+        <nav>
+          <ul>
+            <li><a href="#">Link1</a></li>
+            <li><a href="#">Link2</a></li>
+            <li class="dropdown">
+              <a href="#">Link3</a>
+              <ul class="drop">
+                <li><a href="#">zhiyar1</a></li>
+                <li><a href="#">zhiyar2</a></li>
+                <li><a href="#">zhiyar3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Link4</a></li>
+            <li><a href="#">Link5</a></li>
+            <li><a href="#">Link6</a></li>
+            <li><a href="#">Link7</a></li>
+            <li><a href="#">Link8</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="left">
+        <div class="search">
+          <input type="text" placeholder="Search..." />
+          <button class="btn">Search</button>
+        </div>
+        <div class="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
